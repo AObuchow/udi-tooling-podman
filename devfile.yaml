@@ -1,12 +1,8 @@
+schemaVersion: 2.2.0
 metadata:
-  name: dockerfile-kubedock
-  namespace: aobuchow-dev
-attributes:
-  controller.devfile.io/devworkspace-config:
-    name: devworkspace-config
-    namespace: crw
-  controller.devfile.io/scc: container-build
-  controller.devfile.io/storage-type: common
+  name: udi-tooling-podman-test
+  displayName: UDI tooling podman test
+  description: UDI tooling podman test
 projects:
   - git:
       checkoutFrom:
