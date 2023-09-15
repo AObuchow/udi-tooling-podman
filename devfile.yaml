@@ -1,8 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: udi-tooling-podman-test
-  displayName: UDI tooling podman test
-  description: UDI tooling podman test
+  name: stow-podman-test
 projects:
   - git:
       checkoutFrom:
@@ -11,26 +9,13 @@ projects:
         origin: https://github.com/l0rd/dockerfile-hello-world.git
     name: dockerfile-hello-world
 components:
-  - container:
-      cpuLimit: '4'
-      cpuRequest: '1'
-      env:
-        - name: KUBEDOCK_ENABLED
-          value: 'true'
-        - name: CHE_DASHBOARD_URL
-          value: https://devspaces.apps.sandbox-m2.ll9k.p1.openshiftapps.com
-        - name: CHE_PLUGIN_REGISTRY_URL
-          value: https://devspaces.apps.sandbox-m2.ll9k.p1.openshiftapps.com/plugin-registry/v3
-        - name: CHE_PLUGIN_REGISTRY_INTERNAL_URL
-          value: http://plugin-registry.crw.svc:8080/v3
-        - name: CLUSTER_CONSOLE_URL
-          value: https://console-openshift-console.apps.sandbox-m2.ll9k.p1.openshiftapps.com
-        - name: CLUSTER_CONSOLE_TITLE
-          value: OpenShift console
-        - name: OPENVSX_REGISTRY_URL
-          value: https://open-vsx.org
+  - name: dev-tooling
+    container:
       image: quay.io/aobuchow/universal-developer-image:stow-podman
-      memoryLimit: 8G
       memoryRequest: 2G
-      sourceMapping: /projects
-    name: dev-tooling
+      memoryLimit: 8G
+      cpuRequest: '1'
+      cpuLimit: '4'
+      env:
+        - name: 'KUBEDOCK_ENABLED'
+          value: 'true'
