@@ -11,7 +11,7 @@ projects:
 components:
   - name: dev-tooling
     container:
-      image: quay.io/aobuchow/universal-developer-image:stow-podman
+      image: quay.io/aobuchow/universal-developer-image:stow
       memoryRequest: 2G
       memoryLimit: 8G
       cpuRequest: '1'
